@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <title>Accueil</title>
+    <style>
+        body {
+            background-color: #000b49;
+            font-family: 'Inter', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            margin: 0;
+            color: #ffffff;        
+        }
+
+        .wrapper {
+            width: 90%;
+            max-width: 800px;
+        }
+
+        .typewriter-container {
+            font-size: 2.5em;
+            white-space: nowrap;
+            overflow: hidden;
+            animation: blinkCursor 0.8s steps(1) infinite;
+            margin-bottom: 20px;
+            text-align: left;
+            padding-left: 15px;
+            border-left: 3px solid #ffffff;
+        }
+
+        .description {
+            font-size: 1.1em;
+            max-width: 480px;
+            margin: 0;
+            padding-left: 15px;
+            font-family: 'Times New Roman', Times, serif;
+            text-align: justify;
+            line-height: 1.4;
+            color: #ffffff;
+        }
+
+        .download-box {
+            margin-top: 14px; /* encore réduit */
+            padding: 10px 24px;
+            background-color: #ffffff;
+            border: 2px solid #e4a3b0;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+            transition: all 0.3s ease;
+            margin-left: 15px;
+        }
+
+        .download-box:hover {
+            background-color: #fdf1f4;
+            box-shadow: 0 6px 14px rgba(228, 163, 176, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .download-box a {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-decoration: none;
+            color: #d6336c;
+            font-weight: 600;
+            font-size: 1rem;
+            letter-spacing: 0.3px;
+        }
+
+        .download-box a:hover {
+            color: #a02348;
+        }
+
+        .linkedin-icon {
+            margin-top: 6px; /* encore réduit */
+            display: flex;
+            justify-content: flex-start;
+            padding-left: 15px;
+        }
+
+        .linkedin-icon img {
+            height: 36px;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+            margin-right: 12px; /* <-- ajoute ça pour espacer les icônes */
+
+        }
+
+        .linkedin-icon img:hover {
+            transform: scale(1.1);
+        }
+
+        @keyframes blinkCursor {
+            0%, 100% { border-color: transparent; }
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="typewriter-container">
+            <span id="typewriter"></span>
+        </div>
+
+        <p class="description">
+            Je m'appelle Marissa et je poursuis un BTS SIO. Je m'intéresse au développement web, à l'administration système et aux outils DevOps. Je construis ce portfolio pour rassembler mes projets, certifications et expériences. Curieuse, autonome, et toujours partante pour apprendre quelque chose de nouveau — surtout quand ça touche au code ou à l'optimisation d'un système.
+        </p>
+
+        <div class="download-box">
+            <a href="/media/resume (1).pdf" download>Télécharger mon CV</a>
+        </div>
+
+        <div class="linkedin-icon">
+            <a href="https://www.linkedin.com/" target="_blank">
+                <img src="/media/linkedin_logo" alt="LinkedIn">
+            </a>
+            <a href="https://github.com/marissalmr" target="_blank">
+                <img src="/media/github_logo" alt="LinkedIn">
+            </a>
+            <a href="https://mail.google.com/mail/u/0/#inbox?compose=GTvVlcSGMvhdnffrRmNqHZJgKVbrDBHmLGxGGmZqThNrqHtPphgwLjXlqgBRDxwqGzGPFkzlZRRpr" target="_blank">
+                <img src="/media/mail_logo" alt="LinkedIn">
+            </a>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            new Typed('#typewriter', {
+                strings: [
+                    "Hi, I'm Marissa",
+                    "Salut, je suis Marissa",
+                    "Hola, soy Marissa",
+                    "Hallo, ich bin Marissa",
+                    "Ciao, sono Marissa",
+                    "こんにちは、マリッサです",
+                    "안녕하세요, 저는 마리사예요",
+                    "Olá, eu sou a Marissa",
+                    "Привет, я Марисса",
+                    "Merhaba, ben Marissa",
+                    "مرحبا، أنا ماريسا",
+                    "नमस्ते, मैं Marissa हूँ",
+                    "你好，我是Marissa",
+                    "שלום, אני מריסה",
+                    "Hej, jag är Marissa",
+                    "Hei, minä olen Marissa",
+                    "Hallo, ik ben Marissa",
+                    "Hej, jeg er Marissa",
+                    "Sveiki, aš esu Marissa",
+                    "Pozdrav, ja sam Marissa",
+                    "Ahoj, jsem Marissa",
+                    "Sziasztok, Marissa vagyok",
+                    "Bună, eu sunt Marissa",
+                    "Tere, mina olen Marissa",
+                    "வணக்கம், நான் Marissa",
+                    "สวัสดีค่ะ ฉันชื่อ Marissa",
+                    "Xin chào, tôi là Marissa"
+                ],
+                typeSpeed: 60,
+                backSpeed: 40,
+                backDelay: 1500,
+                loop: true
+            });
+        });
+    </script>
+</body>
+</html>
