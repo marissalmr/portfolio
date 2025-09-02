@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mes Projets - Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #0a0a0a;
+            font-family: 'Inter', sans-serif;
+            color: #e5e7eb;
+            min-height: 100vh;
+            padding: 60px 20px;
+        }
+
+        /* Navigation en haut à droite */
+        .top-navigation {
+            position: fixed;
+            top: 30px;
+            right: 30px;
+            z-index: 1000;
+            display: flex;
+            gap: 16px;
+        }
+
+        .nav-link {
+            background: rgba(17, 24, 39, 0.8);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(55, 65, 81, 0.3);
+            border-radius: 12px;
+            padding: 12px 20px;
+            text-decoration: none;
+            color: #e5e7eb;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-link:hover {
+            background: rgba(96, 165, 250, 0.1);
+            border-color: rgba(96, 165, 250, 0.4);
+            color: #60a5fa;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 8px;
+            letter-spacing: -0.02em;
+        }
+
+        .header p {
+            color: #9ca3af;
+            font-size: 1.1rem;
+            font-weight: 400;
+        }
+
+        /* GRILLE 3 CARTES PAR LIGNE - FIXE */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* CARTES PLUS HAUTES POUR ACCOMMODER LA GRANDE IMAGE */
+        .project-card {
+            background: rgba(17, 24, 39, 0.8);
+            border: 1px solid rgba(55, 65, 81, 0.3);
+            border-radius: 16px;
+            padding: 20px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+            height: 450px; /* Augmenté de 360px à 450px */
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            border-color: rgba(96, 165, 250, 0.4);
+            background: rgba(17, 24, 39, 0.9);
+        }
+
+        /* ZONE IMAGE ÉNORME COMME TON EXEMPLE */
+        .project-icon-container {
+            width: 100%;
+            height: 280px; /* ÉNORME ! Augmenté de 180px à 280px */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 16px;
+            background: rgba(55, 65, 81, 0.3);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .project-icon {
+            font-size: 4rem;
+            color: #9ca3af;
+        }
+
+        /* IMAGE QUI REMPLIT COMPLÈTEMENT L'ESPACE */
+        .project-icon-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain; /* Changé de cover à contain */
+            border-radius: 8px;
+            image-rendering: crisp-edges; /* Évite le flou */
+            image-rendering: -webkit-optimize-contrast; /* Pour Safari */
+        }
+
+        .project-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 4px;
+            line-height: 1.2;
+        }
+
+        .project-subtitle {
+            font-size: 0.85rem;
+            color: #9ca3af;
+            margin-bottom: 6px;
+            font-weight: 400;
+        }
+
+        .project-dates {
+            font-size: 0.75rem;
+            color: #6b7280;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .project-description {
+            color: #d1d5db;
+            line-height: 1.4;
+            margin-bottom: 12px;
+            font-size: 0.8rem;
+            flex: 1;
+            display: -webkit-box;
+            -webkit-line-clamp: 2; /* Limité à 2 lignes pour faire de la place */
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: auto;
+        }
+
+        .tag {
+            background: rgba(55, 65, 81, 0.5);
+            color: #d1d5db;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 0.7rem;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+
+        .tag:hover {
+            background: rgba(96, 165, 250, 0.2);
+            color: #60a5fa;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            body {
+                padding: 40px 16px;
+            }
+
+            .top-navigation {
+                top: 20px;
+                right: 20px;
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .nav-link {
+                padding: 10px 16px;
+                font-size: 0.8rem;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+                max-width: 400px;
+            }
+
+            .project-card {
+                height: 400px;
+            }
+
+            .project-icon-container {
+                height: 220px; /* Grande même sur mobile */
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <div class="top-navigation">
+        <a href="/accueil/" class="nav-link">Accueil</a>
+        <a href="/parcours/" class="nav-link">Parcours Scolaire</a>
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <h1>Mes Projets</h1>
+        </div>
+
+        <div class="projects-grid">
+            <!-- Jeu Devine le Nombre -->
+            <a href="http://127.0.0.1:8000/devine_nombre" class="project-card">
+                <div class="project-icon-container">
+                    <img src="/media/devine_nombre_background.png" alt="Interface du jeu Devinez le Nombre">
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">Devinez le Nombre</h3>
+                    <p class="project-subtitle">Jeu interactif en ligne</p>
+                    <p class="project-description">
+                        Jeu interactif développé en PHP avec génération aléatoire d'un nombre secret entre 1 et 100.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">PHP</span>
+                        <span class="tag">HTML/CSS</span>
+                        <span class="tag">JavaScript</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Site Webtoon -->
+            <a href="/projet/webtoon/" class="project-card">
+                <div class="project-icon-container">
+                    <div class="project-icon">📚</div>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">Plateforme Webtoon</h3>
+                    <p class="project-subtitle">Site de lecture de bandes dessinées</p>
+                    <div class="project-dates">Sep 2024 → Déc 2024</div>
+                    <p class="project-description">
+                        Plateforme web moderne pour la lecture de webtoons avec système d'utilisateurs.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">Django</span>
+                        <span class="tag">HTML/CSS</span>
+                        <span class="tag">PostgreSQL</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Site de Recettes -->
+            <a href="/projet/recettes/" class="project-card">
+                <div class="project-icon-container">
+                    <div class="project-icon">👨‍🍳</div>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">Book de Recettes</h3>
+                    <p class="project-subtitle">Application culinaire interactive</p>
+                    <div class="project-dates">Août 2024 → Oct 2024</div>
+                    <p class="project-description">
+                        Site web de partage de recettes avec fonctionnalités de recherche avancée.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">PHP</span>
+                        <span class="tag">MySQL</span>
+                        <span class="tag">Bootstrap</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Cahiers de Charge -->
+            <a href="/projet/cahiers-charge/" class="project-card">
+                <div class="project-icon-container">
+                    <div class="project-icon">📋</div>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">Cahiers de Charge</h3>
+                    <p class="project-subtitle">Documentation technique</p>
+                    <div class="project-dates">Jan 2024 → En cours</div>
+                    <p class="project-description">
+                        Collection de cahiers des charges détaillés pour différents projets.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">Analyse</span>
+                        <span class="tag">UML</span>
+                        <span class="tag">Documentation</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</body>
+</html>

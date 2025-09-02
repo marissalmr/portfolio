@@ -12,5 +12,11 @@ def download_resume(request):
 def parcours_scolaire(request):
     return render(request, 'parcours_scolaire.html')
 
+def projets(request):
+    return render(request, 'projets.html')
+
+def devine_nombre(request):
+    return render(request, 'projet_devine_nombre.html')
+
 
 # Create your views here.
