@@ -25,7 +25,8 @@ urlpatterns = [
     path('accueil/', views.hello_world),
     path('parcours/', views.parcours_scolaire),
     path('projets/', views.projets),
-    path('devine_nombre', views.devine_nombre)
+    path('devine_nombre', views.devine_nombre),
+    path('webtoona', views.webtoona)
 
     
 ]

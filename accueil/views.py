@@ -18,5 +18,8 @@ def projets(request):
 def devine_nombre(request):
     return render(request, 'projet_devine_nombre.html')
 
+def webtoona(request):
+    return render(request, 'webtoona.html' )
+
 
 # Create your views here.

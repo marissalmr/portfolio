@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Devine le Nombre - Détails du Projet</title>
+    <title>Webtoona - Détails du Projet</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * {
@@ -97,6 +97,11 @@
             height: 100%;
             object-fit: cover;
             transition: transform 0.3s ease;
+        }
+
+        /* Cadrage spécial pour la page d'accueil */
+        .screenshot-item:first-child img {
+            object-position: left center; /* Récupère plus le côté gauche */
         }
 
         .screenshot-item:hover img {
@@ -349,17 +354,17 @@
                 <div class="screenshots-section">
                     <div class="screenshots-container">
                         <div class="screenshot-item">
-                            <img src="/media/jeu_nombre.png" alt="Interface d'accueil">
+                            <img src="/media/page_accueil.png" alt="Page d'accueil Webtoona">
                             <div class="screenshot-overlay">
-                                <div class="screenshot-title">Interface d'accueil</div>
-                                <div class="screenshot-desc">Saisie du nombre à deviner</div>
+                                <div class="screenshot-title">Page d'accueil</div>
+                                <div class="screenshot-desc">Navigation et découverte des webtoons</div>
                             </div>
                         </div>
                         <div class="screenshot-item">
-                            <img src="/media/jeu_nombre2.png" alt="Résultat final">
+                            <img src="/media/bd_aperçu.png" alt="Aperçu détaillé BD">
                             <div class="screenshot-overlay">
-                                <div class="screenshot-title">Résultat final</div>
-                                <div class="screenshot-desc">Historique des tentatives</div>
+                                <div class="screenshot-title">Aperçu détaillé</div>
+                                <div class="screenshot-desc">Statut de lecture et évaluations</div>
                             </div>
                         </div>
                     </div>
@@ -369,17 +374,19 @@
                 <div class="overview-section">
                     <h2 class="overview-title">Overview</h2>
                     <div class="overview-content">
-                        Développé un jeu interactif en ligne en PHP, HTML et CSS, accessible directement depuis un navigateur web. 
-                        Le principe repose sur la génération aléatoire d'un nombre secret entre 1 et 100, que le joueur doit deviner. 
-                        Chaque tentative est accompagnée d'un indice dynamique permettant d'orienter la recherche vers la bonne réponse.
+                        Développé une plateforme webtoon complète en PHP permettant à la fois la lecture et la publication d'œuvres. 
+                        Webtoona répond au besoin d'une plateforme accessible et intuitive, où publier une histoire est aussi simple que la lire. 
+                        L'objectif était de créer un espace ouvert et accueillant pour les lecteurs curieux et les créateurs débutants.
                     </div>
                     
                     <h3 class="achievements-title">Réalisations</h3>
                     <ul class="achievements-list">
-                        <li>Conçu une logique de génération aléatoire et de comparaison des entrées utilisateur pour créer une expérience de jeu fluide</li>
-                        <li>Intégré un système d'historique des tentatives permettant au joueur de suivre sa progression</li>
-                        <li>Implémenté un bouton de redémarrage instantané afin d'optimiser l'expérience utilisateur</li>
-                        <li>Renforcé mes compétences en développement web front-end et back-end, ainsi qu'en gestion des interactions utilisateur et en logique de programmation</li>
+                        <li>Conçu un système d'authentification complet permettant à chaque utilisateur d'avoir son propre espace personnalisé</li>
+                        <li>Développé une fonction de publication intuitive permettant d'uploader des webtoons en quelques clics</li>
+                        <li>Implémenté un système de classification par genres pour faciliter la découverte de nouvelles œuvres</li>
+                        <li>Créé une bibliothèque personnelle pour chaque utilisateur regroupant ses publications</li>
+                        <li>Intégré un système de notation et de commentaires pour favoriser l'interaction communautaire</li>
+                        <li>Renforcé mes compétences en développement web full-stack et en conception d'interfaces utilisateur</li>
                     </ul>
                 </div>
             </div>
@@ -390,11 +397,11 @@
                 <div class="project-details">
                     <h2 class="details-title">Project Details</h2>
                     <div class="project-info">
-                        <div class="project-name">Devinez le Nombre</div>
-                        <div class="project-type">Jeu interactif en ligne développé en PHP</div>
+                        <div class="project-name">Webtoona</div>
+                        <div class="project-type">Plateforme webtoon développée en PHP</div>
                         <div class="project-description">
-                            Jeu de devinette avec génération aléatoire d'un nombre secret entre 1 et 100. 
-                            Système d'indices dynamiques et historique des tentatives pour une expérience optimisée.
+                            Plateforme de partage et de lecture de webtoons permettant aux utilisateurs de publier leurs créations 
+                            et de découvrir de nouvelles œuvres. Interface intuitive et fonctionnalités communautaires intégrées.
                         </div>
                     </div>
                 </div>
@@ -407,7 +414,6 @@
                         <span class="tech-tag">PHP</span>
                         <span class="tech-tag">HTML5</span>
                         <span class="tech-tag">CSS3</span>
-                        <span class="tech-tag">JavaScript</span>
                     </div>
                 </div>
 
@@ -418,29 +424,36 @@
                         <li class="feature-item">
                             <div class="feature-bullet"></div>
                             <div class="feature-text">
-                                <div class="feature-title">Génération Aléatoire</div>
-                                <div class="feature-desc">Nombre secret entre 1 et 100</div>
+                                <div class="feature-title">Authentification</div>
+                                <div class="feature-desc">Système de comptes utilisateurs</div>
                             </div>
                         </li>
                         <li class="feature-item">
                             <div class="feature-bullet"></div>
                             <div class="feature-text">
-                                <div class="feature-title">Indices Dynamiques</div>
-                                <div class="feature-desc">Guidage vers la bonne réponse</div>
+                                <div class="feature-title">Publication</div>
+                                <div class="feature-desc">Upload de webtoons en quelques clics</div>
                             </div>
                         </li>
                         <li class="feature-item">
                             <div class="feature-bullet"></div>
                             <div class="feature-text">
-                                <div class="feature-title">Historique</div>
-                                <div class="feature-desc">Suivi des tentatives</div>
+                                <div class="feature-title">Classification</div>
+                                <div class="feature-desc">Filtrage par genres</div>
                             </div>
                         </li>
                         <li class="feature-item">
                             <div class="feature-bullet"></div>
                             <div class="feature-text">
-                                <div class="feature-title">Redémarrage</div>
-                                <div class="feature-desc">Nouvelle partie instantanée</div>
+                                <div class="feature-title">Bibliothèque</div>
+                                <div class="feature-desc">Espace personnel pour chaque auteur</div>
+                            </div>
+                        </li>
+                        <li class="feature-item">
+                            <div class="feature-bullet"></div>
+                            <div class="feature-text">
+                                <div class="feature-title">Interaction</div>
+                                <div class="feature-desc">Système de notation et commentaires</div>
                             </div>
                         </li>
                     </ul>
@@ -450,3 +463,5 @@
     </div>
 </body>
 </html>
+
+
