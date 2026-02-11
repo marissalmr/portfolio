@@ -21,5 +21,8 @@ def devine_nombre(request):
 def webtoona(request):
     return render(request, 'webtoona.html' )
 
+def recipes(request):
+    return render(request, 'recipes.html')
+
 
 # Create your views here.
