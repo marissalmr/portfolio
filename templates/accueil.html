@@ -1024,6 +1024,93 @@
             }
             
         }
+        /* SECTION: VEILLE */
+#veille {
+    background: #0a0a0a;
+    padding: 100px 20px 80px;
+}
+
+.veille-container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.veille-intro {
+    background: rgba(17, 24, 39, 0.8);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(55, 65, 81, 0.3);
+    border-radius: 24px;
+    padding: 32px;
+    margin: 50px auto 60px;
+    max-width: 700px;
+    text-align: center;
+    color: #d1d5db;
+    line-height: 1.6;
+    transition: all 0.4s ease;
+}
+
+.veille-intro:hover {
+    border-color: rgba(96, 165, 250, 0.4);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    transform: translateY(-4px);
+}
+
+.veille-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+}
+
+.veille-card {
+    background: rgba(17, 24, 39, 0.8);
+    border: 1px solid rgba(55, 65, 81, 0.3);
+    border-radius: 20px;
+    padding: 28px;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.veille-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(96, 165, 250, 0.5);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+    background: rgba(17, 24, 39, 0.9);
+}
+
+.veille-card-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #60a5fa;
+    margin-bottom: 8px;
+}
+
+.veille-card-desc {
+    font-size: 0.9rem;
+    color: #9ca3af;
+    margin-bottom: 16px;
+}
+
+.veille-link {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #60a5fa;
+    transition: 0.3s;
+}
+
+.veille-card:hover .veille-link {
+    letter-spacing: 1px;
+}
+
+@media (max-width: 768px) {
+    .veille-intro {
+        padding: 24px;
+    }
+}
+
     </style>
 </head>
 <body>
@@ -1035,6 +1122,10 @@
         <a href="#experience" class="nav-link" data-section="experience">Exp&eacute;rience</a>
         <a href="#projets" class="nav-link" data-section="projets">Projets</a>
         <a href="#certifications" class="nav-link" data-section="certifications">Certifications</a>
+        <a href="#veille" class="nav-link" data-section="veille">Veille</a>
+        <a href="#contact" class="nav-link" data-section="contact">Contact</a>
+
+
 
     </nav>
 
@@ -1446,6 +1537,64 @@
         </div>
     </div>
 </section>
+<!-- SECTION 5: VEILLE -->
+<section id="veille">
+    <div class="veille-container">
+        <div class="header">
+            <h1>Veille Technologique</h1>
+            <p>Analyse et exploration des tendances du web et du développement</p>
+        </div>
+
+        <!-- Petit carré présentation -->
+        <div class="veille-intro">
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                Suspendisse potenti. Integer euismod, nisi vel consectetur 
+                interdum, nisl nisi aliquet nunc, vitae porttitor nisl 
+                nunc vel sapien. Curabitur at erat nec libero pretium 
+                volutpat. Vivamus sed arcu non nisl tristique luctus.
+            </p>
+        </div>
+
+        <!-- Grille de liens -->
+        <div class="veille-grid">
+
+            <a href="#" class="veille-card">
+                <div class="veille-card-title">Performance Web 2025</div>
+                <div class="veille-card-desc">
+                    Optimisation des frameworks front-end modernes.
+                </div>
+                <span class="veille-link">Lire →</span>
+            </a>
+
+            <a href="#" class="veille-card">
+                <div class="veille-card-title">Next.js vs React</div>
+                <div class="veille-card-desc">
+                    Comparaison SSR, SEO et performances.
+                </div>
+                <span class="veille-link">Lire →</span>
+            </a>
+
+            <a href="#" class="veille-card">
+                <div class="veille-card-title">Cybersécurité Web</div>
+                <div class="veille-card-desc">
+                    Bonnes pratiques pour sécuriser une application.
+                </div>
+                <span class="veille-link">Lire →</span>
+            </a>
+
+            <a href="#" class="veille-card">
+                <div class="veille-card-title">Backend haute performance</div>
+                <div class="veille-card-desc">
+                    Comparatif Node, Django et Go.
+                </div>
+                <span class="veille-link">Lire →</span>
+            </a>
+
+        </div>
+    </div>
+</section>
+
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
