@@ -837,6 +837,100 @@
     position: relative;
     padding-left: 40px;
 }
+/* SECTION 4: CERTIFICATIONS */
+#certifications {
+    background: #0a0a0a;
+}
+
+.certifications-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.certifications-list {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    margin-top: 50px;
+}
+
+.certification-card {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    background: rgba(17, 24, 39, 0.8);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(55, 65, 81, 0.3);
+    border-radius: 20px;
+    padding: 28px;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.certification-card::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(to bottom, #60a5fa, transparent);
+}
+
+.certification-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(96, 165, 250, 0.4);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.certification-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 16px;
+    background: linear-gradient(135deg, #60a5fa, #3b82f6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: white;
+    flex-shrink: 0;
+}
+
+.certification-content {
+    flex: 1;
+}
+
+.certification-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 6px;
+}
+
+.certification-provider {
+    font-size: 0.9rem;
+    color: #9ca3af;
+    margin-bottom: 10px;
+}
+
+.certification-tags {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.certification-tag {
+    background: rgba(96, 165, 250, 0.1);
+    border: 1px solid rgba(96, 165, 250, 0.3);
+    color: #60a5fa;
+    padding: 6px 12px;
+    border-radius: 14px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
 
 .timeline::before {
     content: "";
@@ -940,6 +1034,8 @@
         <a href="#parcours" class="nav-link" data-section="parcours">Parcours Scolaire</a>
         <a href="#experience" class="nav-link" data-section="experience">Exp&eacute;rience</a>
         <a href="#projets" class="nav-link" data-section="projets">Projets</a>
+        <a href="#certifications" class="nav-link" data-section="certifications">Certifications</a>
+
     </nav>
 
     <!-- SECTION 1: ACCUEIL -->
@@ -969,7 +1065,8 @@
                 </a>
             </div>
         </div>
-    </section>
+  
+
 
     <!-- SECTION: COMPETENCES -->
     <section id="competences">
@@ -1306,6 +1403,49 @@
             </div>
         </div>
     </section>
+
+      </section>
+    <!-- SECTION 4: CERTIFICATIONS -->
+<section id="certifications">
+    <div class="certifications-container">
+        <div class="header">
+            <h1>Certifications</h1>
+            <p>Formations et certifications techniques obtenues</p>
+        </div>
+
+        <div class="certifications-list">
+
+            <!-- Certification 1 -->
+            <div class="certification-card">
+                <div class="certification-icon">NB</div>
+                <div class="certification-content">
+                    <div class="certification-title">Networking Basics</div>
+                    <div class="certification-provider">Cisco</div>
+                    <div class="certification-tags">
+                        <span class="certification-tag">Réseaux</span>
+                        <span class="certification-tag">IP</span>
+                        <span class="certification-tag">Protocoles</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Certification 2 -->
+            <div class="certification-card">
+                <div class="certification-icon">CSS</div>
+                <div class="certification-content">
+                    <div class="certification-title">CSS Essentials</div>
+                    <div class="certification-provider">Cisco Packet Tracer</div>
+                    <div class="certification-tags">
+                        <span class="certification-tag">CSS</span>
+                        <span class="certification-tag">Frontend</span>
+                        <span class="certification-tag">Web Design</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
