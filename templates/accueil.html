@@ -6,6 +6,10 @@
     <title>Portfolio - Marissa</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta/dist/vanta.birds.min.js"></script>
+
+
     <style>
         * {
             margin: 0;
@@ -1195,6 +1199,17 @@
     box-shadow: 0 10px 30px rgba(139, 92, 246, 0.4);
 }
 
+/* === Vanta Birds canvas === */
+#accueil canvas {
+    position: absolute !important;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
+    z-index: -1; /* Derrière le contenu de la section */
+}
+
+
     </style>
 </head>
 <body>
@@ -1824,6 +1839,29 @@
         currentSlide = index;
         updateSlider();
     }
+
+          // Vanta Birds uniquement sur la section accueil
+      if (document.getElementById('accueil')) {
+        VANTA.BIRDS({
+  el: "#accueil",
+  mouseControls: true,
+  touchControls: true,
+  gyroControls: false,
+  minHeight: 200.00,
+  minWidth: 200.00,
+  scale: 1.00,
+  scaleMobile: 1.00,
+  backgroundColor: 0x0a0a0a, // ton noir actuel
+  color1: 0x1e3a8a,           // oiseaux / effets principaux
+  color2: 0x2563eb,
+  birdSize: 1.2,
+  wingSpan: 20,
+  separation: 50,
+  alignment: 50,
+});
+
+      }
     </script>
+
 </body>
 </html>
