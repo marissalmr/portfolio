@@ -66,13 +66,17 @@
         }
 
         /* Full viewport sections */
-        section {
-           min-height: 100vh; position: relative; padding: 100px 20px 60px;
+     section {
+            min-height: 100vh;
+            position: relative;
+            padding: 100px 20px 60px;
         }
+        
+
 
         /* SECTION 1: ACCUEIL */
         #accueil {
-            display: flex; justify-content: center; align-items: center; flex-direction: column;
+ display: flex; justify-content: center; align-items: center; flex-direction: column;
         }
 
         .wrapper {
@@ -1110,6 +1114,86 @@
         padding: 24px;
     }
 }
+/* SECTION CONTACT */
+#contact {
+    background: radial-gradient(circle at left, rgba(139, 92, 246, 0.2), transparent 40%),
+                #0a0a0a;
+    padding: 120px 20px 100px;
+}
+
+.contact-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.contact-card {
+    margin-top: 50px;
+    background: rgba(17, 24, 39, 0.85);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(96, 165, 250, 0.3);
+    border-radius: 24px;
+    padding: 40px;
+    transition: 0.4s ease;
+}
+
+.contact-card:hover {
+    border-color: rgba(139, 92, 246, 0.6);
+    box-shadow: 0 0 60px rgba(139, 92, 246, 0.2);
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-size: 0.9rem;
+    color: #9ca3af;
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea {
+    background: rgba(55, 65, 81, 0.3);
+    border: 1px solid rgba(75, 85, 99, 0.4);
+    border-radius: 12px;
+    padding: 14px;
+    color: #ffffff;
+    font-size: 0.95rem;
+    outline: none;
+    transition: 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #8b5cf6;
+    box-shadow: 0 0 15px rgba(139, 92, 246, 0.3);
+}
+
+.contact-btn {
+    align-self: center;
+    padding: 12px 32px;
+    background: linear-gradient(135deg, #8b5cf6, #6366f1);
+    border: none;
+    border-radius: 14px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+    font-size: 1rem;
+}
+
+.contact-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(139, 92, 246, 0.4);
+}
 
     </style>
 </head>
@@ -1132,6 +1216,7 @@
     <!-- SECTION 1: ACCUEIL -->
     <section id="accueil">
         <div class="wrapper">
+            
             <div class="typewriter-container">
                 <span id="typewriter"></span>
             </div>
@@ -1156,7 +1241,8 @@
                 </a>
             </div>
         </div>
-  
+        </section>
+    
 
 
     <!-- SECTION: COMPETENCES -->
@@ -1308,7 +1394,6 @@
                                 <span class="skill-tag">Économie</span>
                                 <span class="skill-tag">Gestion</span>
                                 <span class="skill-tag">Droit</span>
-                                <span class="skill-tag">Analyse stratégique</span>
                             </div>
                         </div>
                     </div>
@@ -1594,6 +1679,39 @@
         </div>
     </div>
 </section>
+<!-- SECTION 6: CONTACT -->
+<section id="contact">
+    <div class="contact-container">
+        <div class="header">
+            <h1>Contact</h1>
+            <p>Une question ? Un projet ? N'hésitez pas à me contacter.</p>
+        </div>
+
+        <div class="contact-card">
+            <form class="contact-form">
+                
+                <div class="form-group">
+                    <label>Nom</label>
+                    <input type="text" placeholder="Votre nom" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" placeholder="Votre email" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Message</label>
+                    <textarea rows="5" placeholder="Votre message..." required></textarea>
+                </div>
+
+                <button type="submit" class="contact-btn">Envoyer</button>
+
+            </form>
+        </div>
+    </div>
+</section>
+
 
 
     <script>
