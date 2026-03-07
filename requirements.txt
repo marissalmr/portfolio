@@ -34,7 +34,6 @@ proto-plus==1.27.0
 protobuf==6.33.2
 pyasn1==0.6.1
 pyasn1_modules==0.4.2
-pygraphviz==1.14
 pyparsing==3.3.1
 python-crontab==3.3.0
 python-dateutil==2.9.0.post0
