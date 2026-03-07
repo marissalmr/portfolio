@@ -27,7 +27,8 @@ urlpatterns = [
     path('projets/', views.projets),
     path('accueil/devine_nombre/', views.devine_nombre),
     path('accueil/webtoona/', views.webtoona),
-    path('recette/', views.recipes)
+    path('recette/', views.recipes),
+    path('accueil/gbs', views.gbs)
 
     
 ]

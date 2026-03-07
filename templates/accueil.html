@@ -556,18 +556,46 @@
         }
 
         .exp-company-icon {
-            width: 52px;
-            height: 52px;
-            border-radius: 14px;
-            background: linear-gradient(135deg, #60a5fa, #3b82f6);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: white;
-            flex-shrink: 0;
-        }
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white; /* important si logo transparent */
+}
+.exp-report {
+    margin-top: 20px;
+}
+
+.report-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(96, 165, 250, 0.1);
+    border: 1px solid rgba(96, 165, 250, 0.3);
+    color: #60a5fa;
+    padding: 10px 14px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: all 0.25s ease;
+}
+
+.report-btn:hover {
+    background: rgba(96, 165, 250, 0.2);
+    border-color: rgba(96, 165, 250, 0.6);
+    transform: translateY(-2px);
+}
+.exp-company-icon img {
+    max-width: 80%;
+    max-height: 80%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+}
 
         .exp-title {
             font-size: 1.4rem;
@@ -849,95 +877,61 @@
 #certifications {
     background: #0a0a0a;
 }
+/* === CERTIFICATIONS BADGE GALLERY === */
+
+.certifications-grid {
+    margin-top: 60px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 40px;
+}
+
+.cert-badge-card {
+    text-align: center;
+    transition: all 0.4s ease;
+    position: relative;
+}
+
+.cert-badge-card:hover {
+    transform: translateY(-8px) scale(1.03);
+}
+
+
+
+.cert-badge-wrapper:hover {
+    border-color: rgba(139,92,246,0.6);
+    box-shadow: 0 0 40px rgba(139,92,246,0.3);
+}
+
+.cert-badge-wrapper img {
+    width: 140px;
+    height: 140px;
+    object-fit: contain;
+    transition: 0.4s ease;
+}
+
+.cert-badge-card:hover img {
+    transform: scale(1.08) rotate(-2deg);
+}
+
+.cert-title {
+    margin-top: 18px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.cert-subtitle {
+    font-size: 0.85rem;
+    color: #9ca3af;
+    margin-top: 4px;
+}
 
 .certifications-container {
     max-width: 1000px;
     margin: 0 auto;
 }
 
-.certifications-list {
-    display: flex;
-    flex-direction: column;
-    gap: 28px;
-    margin-top: 50px;
-}
-
-.certification-card {
-    display: flex;
-    align-items: center;
-    gap: 24px;
-    background: rgba(17, 24, 39, 0.8);
-    backdrop-filter: blur(16px);
-    border: 1px solid rgba(55, 65, 81, 0.3);
-    border-radius: 20px;
-    padding: 28px;
-    transition: all 0.4s ease;
-    position: relative;
-    overflow: hidden;
-}
-
-.certification-card::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 4px;
-    height: 100%;
-    background: linear-gradient(to bottom, #60a5fa, transparent);
-}
-
-.certification-card:hover {
-    transform: translateY(-4px);
-    border-color: rgba(96, 165, 250, 0.4);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-}
-
-.certification-icon {
-    width: 60px;
-    height: 60px;
-    border-radius: 16px;
-    background: linear-gradient(135deg, #60a5fa, #3b82f6);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.6rem;
-    font-weight: 700;
-    color: white;
-    flex-shrink: 0;
-}
-
-.certification-content {
-    flex: 1;
-}
-
-.certification-title {
-    font-size: 1.3rem;
-    font-weight: 600;
-    color: #ffffff;
-    margin-bottom: 6px;
-}
-
-.certification-provider {
-    font-size: 0.9rem;
-    color: #9ca3af;
-    margin-bottom: 10px;
-}
-
-.certification-tags {
-    display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
-}
-
-.certification-tag {
-    background: rgba(96, 165, 250, 0.1);
-    border: 1px solid rgba(96, 165, 250, 0.3);
-    color: #60a5fa;
-    padding: 6px 12px;
-    border-radius: 14px;
-    font-size: 0.8rem;
-    font-weight: 500;
-}
 
 
 .timeline::before {
@@ -950,6 +944,73 @@
     background: rgba(96,165,250,0.3);
 }
 
+/* === FLOATING CERTIFICATIONS === */
+
+.certifications-grid {
+    margin-top: 60px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 60px;
+    justify-items: center;
+}
+
+.cert-badge-card {
+    text-align: center;
+}
+
+/* Floating animation */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-12px); }
+    100% { transform: translateY(0px); }
+}
+
+.cert-badge-card img {
+    width: 140px;
+    height: 140px;
+    object-fit: contain;
+    animation: float 4s ease-in-out infinite;
+    transition: all 0.4s ease;
+}
+
+/* Violet glow hover */
+.cert-badge-card img:hover {
+    filter: drop-shadow(0 0 25px rgba(139, 92, 246, 0.7));
+    transform: scale(1.08);
+}
+
+/* Title */
+.cert-title {
+    margin-top: 20px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.cert-subtitle {
+    font-size: 0.85rem;
+    color: #9ca3af;
+    margin-top: 4px;
+}
+
+/* Download button */
+.cert-download {
+    margin-top: 12px;
+    display: inline-block;
+    padding: 8px 14px;
+    font-size: 0.75rem;
+    border-radius: 20px;
+    text-decoration: none;
+    color: #a78bfa;
+    border: 1px solid rgba(139, 92, 246, 0.4);
+    transition: all 0.3s ease;
+}
+
+.cert-download:hover {
+    background: rgba(139, 92, 246, 0.15);
+    color: #ffffff;
+    box-shadow: 0 0 15px rgba(139, 92, 246, 0.4);
+}
 
 
 
@@ -1241,7 +1302,7 @@
             </p>
 
             <div class="download-box">
-                <a href="/media/resume (1).pdf" download>Télécharger mon CV</a>
+                <a href="/media/Copie de White Clean Minimalist Business Real Estate Resume (1).pdf" download>Télécharger mon CV</a>
             </div>
 
             <div class="linkedin-icon">
@@ -1371,50 +1432,58 @@
                     </div>
                 </div>
 
-                <div class="timeline-item" data-section="1">
-                    <div class="education-card">
-                        <div class="card-header">
-                            <div class="institution-logo text-logo">JA</div>
-                            <div class="card-content">
-                                <div class="degree-title">Bac STMG option Mercatique</div>
-                                <div class="date-range">2022 - 2024</div>
-                                <div class="institution-name">Lycée Jacques Amyot</div>
-                                <div class="program-details">Sciences et Technologies du Management et de la Gestion</div>
-                            </div>
-                        </div>
+         <!-- Lycée Jacques Amyot -->
+<div class="timeline-item" data-section="1">
+    <div class="education-card">
 
-                        <div class="card-description">
-                            Cette formation m'a offert une compréhension approfondie du <span class="highlight">monde de l'entreprise</span> et des enjeux économiques contemporains. Les cours d'économie ont particulièrement nourri ma curiosité intellectuelle.
-                            <br><br>
-                            C'est durant cette période que j'ai pris conscience de l'importance croissante du <span class="highlight">digital</span> dans les stratégies d'entreprise, catalyseur de ma transition vers les technologies de l'information.
-                        </div>
-
-                        <div class="badges-section">
-                            <div class="badges-grid">
-                                <div class="badge">
-                                    <div class="badge-icon"></div>
-                                    Spécialisation Marketing
-                                </div>
-                                <div class="badge">
-                                    <div class="badge-icon"></div>
-                                    Économie & Gestion
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="skills-section">
-                            <div class="skills-title">Compétences développées</div>
-                            <div class="skills-grid">
-                                <span class="skill-tag">Marketing</span>
-                                <span class="skill-tag">Économie</span>
-                                <span class="skill-tag">Gestion</span>
-                                <span class="skill-tag">Droit</span>
-                            </div>
-                        </div>
-                    </div>
+        <div class="card-header">
+            <div class="institution-logo">
+                <img src="/media/jacques_am.png" alt="Logo du Lycée Jacques Amyot" />
+            </div>
+            <div class="card-content">
+                <div class="degree-title">Bac STMG option Mercatique</div>
+                <div class="date-range">2022 - 2024</div>
+                <div class="institution-name">Lycée Jacques Amyot</div>
+                <div class="program-details">
+                    Sciences et Technologies du Management et de la Gestion
                 </div>
             </div>
         </div>
+
+        <div class="card-description">
+            Cette formation m'a offert une compréhension approfondie du 
+            <span class="highlight">monde de l'entreprise</span> et des enjeux économiques contemporains. 
+            Les cours d'économie ont particulièrement nourri ma curiosité intellectuelle.
+            <br><br>
+            C'est durant cette période que j'ai pris conscience de l'importance croissante du 
+            <span class="highlight">digital</span> dans les stratégies d'entreprise, catalyseur de ma transition vers les technologies de l'information.
+        </div>
+
+        <div class="badges-section">
+            <div class="badges-grid">
+                <div class="badge">
+                    <div class="badge-icon"></div>
+                    Spécialisation Marketing
+                </div>
+                <div class="badge">
+                    <div class="badge-icon"></div>
+                    Économie & Gestion
+                </div>
+            </div>
+        </div>
+
+        <div class="skills-section">
+            <div class="skills-title">Compétences développées</div>
+            <div class="skills-grid">
+                <span class="skill-tag">Marketing</span>
+                <span class="skill-tag">Économie</span>
+                <span class="skill-tag">Gestion</span>
+                <span class="skill-tag">Droit</span>
+            </div>
+        </div>
+
+    </div>
+</div>
     </section>
 
     <!-- SECTION: EXPERIENCE -->
@@ -1431,12 +1500,14 @@
                     <div class="slide">
                         <div class="experience-card">
                             <div class="exp-header">
-                                <div class="exp-company-icon">VV</div>
-                                <div>
-                                    <div class="exp-title">Stagiaire D&eacute;veloppeuse Web</div>
-                                    <div class="exp-company">Visual Vibes</div>
-                                </div>
-                            </div>
+    <div class="exp-company-icon">
+        <img src="/media/visualvibes.png" alt="Logo Visual Vibes">
+    </div>
+    <div>
+        <div class="exp-title">Stagiaire Développeuse Web</div>
+        <div class="exp-company">Visual Vibes</div>
+    </div>
+</div>
                             <div class="exp-date">2025 &mdash; 6 semaines</div>
 
                             <div class="exp-missions-title">Principales missions</div>
@@ -1458,6 +1529,17 @@
                                  <span class="exp-tech">Tailwind</span>
                                 <span class="exp-tech">Django</span>
 
+                            <div class="exp-report">
+    <a href="/media/rapport_stage2.pdf" download class="report-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+            <polyline points="7 10 12 15 17 10"/>
+            <line x1="12" y1="15" x2="12" y2="3"/>
+        </svg>
+        Télécharger le rapport
+    </a>
+</div>
+
                             </div>
                         </div>
                     </div>
@@ -1466,7 +1548,9 @@
                     <div class="slide">
                         <div class="experience-card">
                             <div class="exp-header">
-                                <div class="exp-company-icon">GB</div>
+                              <div class="exp-company-icon">
+    <img src="/media/logo_gbs.png" alt="Logo GBS Bâtiment">
+                                    </div>
                                 <div>
                                     <div class="exp-title">Stagiaire Développeuse Web</div>
                                     <div class="exp-company">GBS B&acirc;timent</div>
@@ -1497,7 +1581,16 @@
                                 <span class="exp-tech">REST API</span>
                                 <span class="exp-tech">Git</span>
 
-
+                            <div class="exp-report">
+    <a href="/media/rapport_stage1.pdf" download class="report-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+            <polyline points="7 10 12 15 17 10"/>
+            <line x1="12" y1="15" x2="12" y2="3"/>
+        </svg>
+        Télécharger le rapport
+    </a>
+</div>
 
                             </div>
                         </div>
@@ -1569,7 +1662,8 @@
                 <!-- Site de Recettes -->
                 <a href="/recette/" class="project-card">
                     <div class="project-icon-container">
-                        <div class="project-icon">👨‍🍳</div>
+                        <img src="/media/crumble_kiss.png" alt="Interface de Webtoona">
+
                     </div>
                     <div class="project-content">
                         <h3 class="project-title">Book de Recettes</h3>
@@ -1581,27 +1675,31 @@
                         <div class="project-tags">
                             <span class="tag">PHP</span>
                             <span class="tag">MySQL</span>
-                            <span class="tag">Bootstrap</span>
+                            <span class="tag">Tailwind</span>
                         </div>
                     </div>
                 </a>
 
                 <!-- Cahiers de Charge -->
-                <a href="/projet/cahiers-charge/" class="project-card">
+                <a href="/accueil/gbs" class="project-card">
                     <div class="project-icon-container">
-                        <div class="project-icon">📋</div>
+                    <img src="/media/gbs.png" alt="Interface de Webtoona">
                     </div>
                     <div class="project-content">
-                        <h3 class="project-title">Cahiers de Charge</h3>
-                        <p class="project-subtitle">Documentation technique</p>
-                        <div class="project-dates">Jan 2024 → En cours</div>
+                        <h3 class="project-title">Site GBS</h3>
+                        <p class="project-subtitle">Site </p>
                         <p class="project-description">
-                            Collection de cahiers des charges détaillés pour différents projets.
+                            Création d'un site web
                         </p>
                         <div class="project-tags">
-                            <span class="tag">Analyse</span>
-                            <span class="tag">UML</span>
-                            <span class="tag">Documentation</span>
+                            <span class="tag">Django</span>
+                            <span class="tag">Celery</span>
+                            <span class="tag">Redis</span>
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">API Rest</span>
+                            <span class="tag">Github</span>
+
+
                         </div>
                     </div>
                 </a>
@@ -1618,35 +1716,34 @@
             <p>Formations et certifications techniques obtenues</p>
         </div>
 
-        <div class="certifications-list">
+       <div class="certifications-grid">
 
-            <!-- Certification 1 -->
-            <div class="certification-card">
-                <div class="certification-icon">NB</div>
-                <div class="certification-content">
-                    <div class="certification-title">Networking Basics</div>
-                    <div class="certification-provider">Cisco</div>
-                    <div class="certification-tags">
-                        <span class="certification-tag">Réseaux</span>
-                        <span class="certification-tag">IP</span>
-                        <span class="certification-tag">Protocoles</span>
-                    </div>
-                </div>
-            </div>
+   
 
-            <!-- Certification 2 -->
-            <div class="certification-card">
-                <div class="certification-icon">CSS</div>
-                <div class="certification-content">
-                    <div class="certification-title">CSS Essentials</div>
-                    <div class="certification-provider">Cisco Packet Tracer</div>
-                    <div class="certification-tags">
-                        <span class="certification-tag">CSS</span>
-                        <span class="certification-tag">Frontend</span>
-                        <span class="certification-tag">Web Design</span>
-                    </div>
-                </div>
-            </div>
+    <!-- Introduction to Packet Tracer -->
+    <div class="cert-badge-card">
+        <img src="/media/introduction-to-packet-tracer.png" alt="Packet Tracer Badge">
+        <div class="cert-title">Introduction to Packet Tracer</div>
+        <div class="cert-subtitle">Cisco Networking Academy</div>
+        <a href="/media/certificat1.pdf" 
+           class="cert-download" 
+           download>
+           Télécharger PDF
+        </a>
+    </div>
+      <div class="cert-badge-card">
+        <img src="/media/badge2.png" alt="Networking Basics Badge">
+        <div class="cert-title">Networking Basics</div>
+        <div class="cert-subtitle">Cisco Networking Academy</div>
+        <a href="/media/certificat2.pdf" 
+           class="cert-download" 
+           download>
+           Télécharger PDF
+        </a>
+    </div>
+</div>
+
+            
 
         </div>
     </div>
@@ -1733,7 +1830,6 @@ Un tour d'horizon des protocoles essentiels comme OAuth 2.0 et TLS pour garantir
     <div class="contact-container">
         <div class="header">
             <h1>Contact</h1>
-            <p>Une question ? Un projet ? N'hésitez pas à me contacter.</p>
         </div>
 
         <div class="contact-card">

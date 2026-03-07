@@ -24,5 +24,7 @@ def webtoona(request):
 def recipes(request):
     return render(request, 'recipes.html')
 
+def gbs(request):
+    return render(request, 'gbs.html')
 
 # Create your views here.

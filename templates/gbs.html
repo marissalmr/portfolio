@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plateforme de Qualification - Détails du Projet</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #0a0a0a;
+            font-family: 'Inter', sans-serif;
+            color: #e5e7eb;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .top-navigation {
+            position: fixed;
+            top: 30px;
+            right: 30px;
+            z-index: 1000;
+            display: flex;
+            gap: 16px;
+        }
+
+        .nav-link {
+            background: rgba(17, 24, 39, 0.8);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(55, 65, 81, 0.3);
+            border-radius: 12px;
+            padding: 12px 20px;
+            text-decoration: none;
+            color: #e5e7eb;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-link:hover {
+            background: rgba(96, 165, 250, 0.1);
+            border-color: rgba(96, 165, 250, 0.4);
+            color: #60a5fa;
+            transform: translateY(-2px);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-top: 80px;
+        }
+
+        .project-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        .main-content {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .screenshots-section {
+            background: rgba(17, 24, 39, 0.8);
+            border: 1px solid rgba(55, 65, 81, 0.3);
+            border-radius: 20px;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 350px;
+        }
+        /* Screenshots layout */
+.screenshots-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.screenshot-item {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 4/3;
+}
+
+.screenshot-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.screenshot-item:hover img {
+    transform: scale(1.05);
+}
+
+.screenshot-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.85));
+    padding: 20px;
+    color: white;
+}
+
+.screenshot-title {
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 4px;
+}
+
+.screenshot-desc {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+        .placeholder-icon {
+            font-size: 80px;
+            opacity: 0.3;
+        }
+
+        .overview-section {
+            background: rgba(17, 24, 39, 0.8);
+            border: 1px solid rgba(55, 65, 81, 0.3);
+            border-radius: 20px;
+            padding: 24px;
+        }
+
+        .overview-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 16px;
+        }
+
+        .overview-content {
+            color: #d1d5db;
+            line-height: 1.6;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+
+        .achievements-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #60a5fa;
+            margin-bottom: 12px;
+        }
+
+        .achievements-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .achievements-list li {
+            padding: 6px 0;
+            padding-left: 16px;
+            position: relative;
+            color: #d1d5db;
+            line-height: 1.5;
+            font-size: 0.85rem;
+        }
+
+        .achievements-list li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: #60a5fa;
+            font-weight: bold;
+        }
+
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .project-details,
+        .technologies-section,
+        .features-section {
+            background: rgba(17, 24, 39, 0.8);
+            border: 1px solid rgba(55, 65, 81, 0.3);
+            border-radius: 20px;
+            padding: 24px;
+        }
+
+        .details-title,
+        .section-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 16px;
+        }
+
+        .project-name {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #60a5fa;
+            margin-bottom: 8px;
+        }
+
+        .project-type {
+            font-size: 0.9rem;
+            color: #9ca3af;
+            margin-bottom: 16px;
+        }
+
+        .project-description {
+            color: #d1d5db;
+            line-height: 1.6;
+            font-size: 0.9rem;
+        }
+
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 8px;
+        }
+
+        .tech-tag {
+            background: rgba(96, 165, 250, 0.1);
+            border: 1px solid rgba(96, 165, 250, 0.3);
+            color: #60a5fa;
+            padding: 8px 12px;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            text-align: center;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .feature-item {
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(55, 65, 81, 0.3);
+            display: flex;
+            gap: 12px;
+        }
+
+        .feature-item:last-child {
+            border-bottom: none;
+        }
+
+        .feature-bullet {
+            width: 6px;
+            height: 6px;
+            background: #60a5fa;
+            border-radius: 50%;
+            margin-top: 8px;
+        }
+
+        .feature-title {
+            font-weight: 600;
+            color: #ffffff;
+            font-size: 0.9rem;
+            margin-bottom: 4px;
+        }
+
+        .feature-desc {
+            color: #9ca3af;
+            font-size: 0.8rem;
+        }
+
+        @media (max-width: 1024px) {
+            .project-layout {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="top-navigation">
+    <a href="/accueil/" class="nav-link">Accueil</a>
+</div>
+
+<div class="container">
+    <div class="project-layout">
+
+        <div class="main-content">
+
+           <div class="screenshots-section">
+    <div class="screenshots-container">
+
+        <div class="screenshot-item">
+            <img src="/media/gbs_apercu1.png" alt="Page d'accueil Plateforme Qualification">
+            <div class="screenshot-overlay">
+                <div class="screenshot-title">Page d'accueil</div>
+                <div class="screenshot-desc">
+                    Formulaire de qualification avec validation SIRET en temps réel
+                </div>
+            </div>
+        </div>
+
+        <div class="screenshot-item">
+            <img src="/media/gbs_apercu2.png" alt="Diagnostic RGE intelligent">
+            <div class="screenshot-overlay">
+                <div class="screenshot-title">Diagnostic RGE</div>
+                <div class="screenshot-desc">
+                    Questionnaire dynamique avec calcul automatique d’éligibilité
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+            <div class="overview-section">
+                <h2 class="overview-title">Overview</h2>
+                <div class="overview-content">
+                    Conception et développement d’une plateforme web dynamique de qualification automatisée des prospects, 
+                    remplaçant un site vitrine statique par un véritable outil métier. 
+                    L’objectif était d’optimiser la phase de prospection, réduire le temps de traitement interne 
+                    et fiabiliser les données collectées via des vérifications automatisées.
+                </div>
+
+                <h3 class="achievements-title">Réalisations</h3>
+                <ul class="achievements-list">
+                    <li>Développement d’un backend robuste en Django avec architecture relationnelle évolutive</li>
+                    <li>Intégration de l’API INSEE pour validation automatique des numéros SIRET</li>
+                    <li>Création d’un questionnaire intelligent RGE </li>
+                    <li>Système dynamique de questions administrable via Django Admin (JSONField)</li>
+                    <li>Modélisation avancée : Contact, Entreprise, Dossier (cohérence et traçabilité)</li>
+                    <li>Mise en place de tâches asynchrones avec Celery et Redis</li>
+                    <li>Intégration Google Calendar pour automatiser la prise de rendez-vous</li>
+                    <li>Préparation à la migration SQLite → PostgreSQL</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="sidebar">
+
+            <div class="project-details">
+                <h2 class="details-title">Project Details</h2>
+                <div class="project-name">Plateforme de Qualification</div>
+                <div class="project-description">
+                    Outil métier de qualification automatisée des prospects avec validation légale 
+                    des entreprises, diagnostic intelligent et gestion centralisée via Django Admin.
+                </div>
+            </div>
+
+            <div class="technologies-section">
+                <h3 class="section-title">Technologies</h3>
+                <div class="tech-grid">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">Django</span>
+                    <span class="tech-tag">Celery</span>
+                    <span class="tech-tag">Redis</span>
+                    <span class="tech-tag">SQLite</span>
+                    <span class="tech-tag">PostgreSQL</span>
+                    <span class="tech-tag">HTML5</span>
+                    <span class="tech-tag">CSS3</span>
+                    <span class="tech-tag">Javascript</span>
+                    <span class="tech-tag">Github</span>
+
+
+                </div>
+            </div>
+
+            <div class="features-section">
+                <h3 class="section-title">Fonctionnalités</h3>
+                <ul class="feature-list">
+                    <li class="feature-item">
+                        <div class="feature-bullet"></div>
+                        <div>
+                            <div class="feature-title">Validation SIRET</div>
+                            <div class="feature-desc">Interrogation automatique API INSEE</div>
+                        </div>
+                    </li>
+
+            
+
+                    
+                    <li class="feature-item">
+                        <div class="feature-bullet"></div>
+                        <div>
+                            <div class="feature-title">Questionnaire RGE</div>
+                            <div class="feature-desc">Pour permettre d'analyser la cohérence du projet</div>
+                        </div>
+                    </li>
+
+                    <li class="feature-item">
+                        <div class="feature-bullet"></div>
+                        <div>
+                            <div class="feature-title">Automatisation RDV</div>
+                            <div class="feature-desc">Intégration Google Calendar</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
