@@ -19,9 +19,11 @@ from django.urls import path
 from accueil import views
 from django.conf import settings
 from django.conf.urls.static import static
+from django.views.generic import RedirectView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', RedirectView.as_view(url='/accueil/')), 
     path('accueil/', views.hello_world),
     path('parcours/', views.parcours_scolaire),
     path('projets/', views.projets),
