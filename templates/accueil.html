@@ -146,31 +146,21 @@
 
        /* SECTION 1: ACCUEIL - icônes réseaux */
 .linkedin-icon {
-    margin-top: 12px;
+    margin-top: 6px;
     display: flex;
-    justify-content: flex-start; /* ou center si tu veux centrer */
-    align-items: center; /* aligne verticalement */
-    gap: 10px; /* espace uniforme entre les icônes */
+    justify-content: flex-start;
     padding-left: 15px;
 }
 
 .linkedin-icon img {
-    width: 28px;
-    height: 28px;
+    height: 36px;        /* ← taille fixe par hauteur, pas de width */
     transition: transform 0.3s ease;
     cursor: pointer;
-    display: block; /* ← supprime l'espace inline sous l'image */
-    border-radius: 6px; /* ← adoucit les coins si fond blanc visible */
+    margin-right: 12px;
 }
 
-.linkedin-icon a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 28px;
-    height: 28px;
-    overflow: hidden; /* ← force la taille même si l'image déborde */
-}
+
+
 
 .linkedin-icon img:hover {
     transform: scale(1.2); /* léger agrandissement au hover */
