@@ -1307,13 +1307,13 @@
 
             <div class="linkedin-icon">
                 <a href="https://www.linkedin.com/in/marissa-l-ba21a333b/" target="_blank">
-                    <img src="/media/linkedin_logo.png" alt="LinkedIn">
+                    <img src="/media/linkedin_logo" alt="LinkedIn">
                 </a>
                 <a href="https://github.com/marissalmr" target="_blank">
-                    <img src="/media/github_logo.png" alt="GitHub">
+                    <img src="/media/github_logo" alt="GitHub">
                 </a>
                 <a href="https://mail.google.com/mail/u/0/#inbox?compose=GTvVlcSGMvhdnffrRmNqHZJgKVbrDBHmLGxGGmZqThNrqHtPphgwLjXlqgBRDxwqGzGPFkzlZRRpr" target="_blank">
-                    <img src="/media/mail_logo.png" alt="Email">
+                    <img src="/media/mail_logo" alt="Email">
                 </a>
             </div>
         </div>
@@ -1658,11 +1658,13 @@
                         </div>
                     </div>
                 </a>
+                
+                {% load static %}
 
                 <!-- Site de Recettes -->
                 <a href="/recette/" class="project-card">
                     <div class="project-icon-container">
-                        <img src="/media/crumble_kiss.png" alt="Interface de Webtoona">
+                        <img src="{% static 'crumble_kiss.png' %}" alt="Interface de Webtoona">
 
                     </div>
                     <div class="project-content">
