@@ -155,10 +155,21 @@
 }
 
 .linkedin-icon img {
-    width: 28px;   /* réduit la taille */
-    height: 28px;  /* réduit la taille */
+    width: 28px;
+    height: 28px;
     transition: transform 0.3s ease;
     cursor: pointer;
+    display: block; /* ← supprime l'espace inline sous l'image */
+    border-radius: 6px; /* ← adoucit les coins si fond blanc visible */
+}
+
+.linkedin-icon a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    overflow: hidden; /* ← force la taille même si l'image déborde */
 }
 
 .linkedin-icon img:hover {
@@ -1387,7 +1398,7 @@
                     <div class="education-card">
                         <div class="card-header">
                             <div class="institution-logo">
-                                <img src="" alt="Logo du lycée Turgot" />
+                                <img src="{% static 'turgot.png' %}" alt="Logo du lycée Turgot" />
                             </div>
                             <div class="card-content">
                                 <div class="degree-title">BTS SIO option SLAM</div>
