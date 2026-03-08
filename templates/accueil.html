@@ -146,24 +146,34 @@
 
        /* SECTION 1: ACCUEIL - icônes réseaux */
 .linkedin-icon {
-    margin-top: 6px;
+    margin-top: 12px;
     display: flex;
     justify-content: flex-start;
+    align-items: center;
+    gap: 12px;
     padding-left: 15px;
 }
 
-.linkedin-icon img {
-    height: 36px;        /* ← taille fixe par hauteur, pas de width */
-    transition: transform 0.3s ease;
-    cursor: pointer;
-    margin-right: 12px;
+.linkedin-icon a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+    overflow: hidden;   /* ← bloque tout débordement */
 }
 
+.linkedin-icon a img {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    display: block;     /* ← supprime l'espace fantôme sous l'image */
+    transition: transform 0.3s ease;
+}
 
-
-
-.linkedin-icon img:hover {
-    transform: scale(1.2); /* léger agrandissement au hover */
+.linkedin-icon a:hover img {
+    transform: scale(1.2);
 }
 
         @keyframes blinkCursor {
@@ -1316,7 +1326,7 @@
                     <img src="{% static 'linkedin_logo.png' %}" alt="LinkedIn">
                 </a>
                 <a href="https://github.com/marissalmr" target="_blank">
-                <img src="{% static 'github_logo.png' %}" alt="GitHub">
+                <img src="{% static 'git.png' %}" alt="GitHub">
                 </a>
                 <a href="https://mail.google.com/mail/u/0/#inbox?compose=GTvVlcSGMvhdnffrRmNqHZJgKVbrDBHmLGxGGmZqThNrqHtPphgwLjXlqgBRDxwqGzGPFkzlZRRpr" target="_blank">
                     <img src="{% static 'mail_logo.png' %}" alt="Email">
