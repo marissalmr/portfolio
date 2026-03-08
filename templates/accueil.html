@@ -144,23 +144,26 @@
             color: #a02348;
         }
 
-        .linkedin-icon {
-            margin-top: 6px;
-            display: flex;
-            justify-content: flex-start;
-            padding-left: 15px;
-        }
+       /* SECTION 1: ACCUEIL - icônes réseaux */
+.linkedin-icon {
+    margin-top: 12px;
+    display: flex;
+    justify-content: flex-start; /* ou center si tu veux centrer */
+    align-items: center; /* aligne verticalement */
+    gap: 10px; /* espace uniforme entre les icônes */
+    padding-left: 15px;
+}
 
-        .linkedin-icon img {
-            height: 36px;
-            transition: transform 0.3s ease;
-            cursor: pointer;
-            margin-right: 12px;
-        }
+.linkedin-icon img {
+    width: 28px;   /* réduit la taille */
+    height: 28px;  /* réduit la taille */
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
 
-        .linkedin-icon img:hover {
-            transform: scale(1.1);
-        }
+.linkedin-icon img:hover {
+    transform: scale(1.2); /* léger agrandissement au hover */
+}
 
         @keyframes blinkCursor {
             0%, 100% { border-color: transparent; }
