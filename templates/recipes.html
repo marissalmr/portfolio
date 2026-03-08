@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -291,7 +292,7 @@
             <div class="screenshots-section">
                 <div class="screenshots-container">
                     <div class="screenshot-item">
-                        <img src="/media/recette1.png" alt="Accueil RecipeBook">
+                        <img src="{% static 'recette1.png' %}" alt="Accueil RecipeBook">
                         <div class="screenshot-overlay">
                             <div class="screenshot-title">Page d'inscription</div>
                             <div class="screenshot-desc">Formulaire d'inscription</div>
@@ -299,7 +300,7 @@
                     </div>
 
                     <div class="screenshot-item">
-                        <img src="/media/recette2.png" alt="Détail recette">
+                        <img src="{% static 'recette2.png' %}" alt="Détail recette">
                         <div class="screenshot-overlay">
                             <div class="screenshot-title">Création de recette</div>
                             <div class="screenshot-desc">Publiez votre recette</div>

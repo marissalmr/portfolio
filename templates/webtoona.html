@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -353,14 +355,14 @@
                 <div class="screenshots-section">
                     <div class="screenshots-container">
                         <div class="screenshot-item">
-                            <img src="/media/page_accueil.png" alt="Page d'accueil Webtoona">
+                            <img src="{% static 'page_accueil.png' %}" alt="Page d'accueil Webtoona">
                             <div class="screenshot-overlay">
                                 <div class="screenshot-title">Page d'accueil</div>
                                 <div class="screenshot-desc">Navigation et découverte des webtoons</div>
                             </div>
                         </div>
                         <div class="screenshot-item">
-                            <img src="/media/bd_aperçu.png" alt="Aperçu détaillé BD">
+                            <img src="{% static 'bd_aperçu.png' %}" alt="Aperçu détaillé BD">
                             <div class="screenshot-overlay">
                                 <div class="screenshot-title">Aperçu détaillé</div>
                                 <div class="screenshot-desc">Statut de lecture et évaluations</div>

@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -348,14 +350,14 @@
                 <div class="screenshots-section">
                     <div class="screenshots-container">
                         <div class="screenshot-item">
-                            <img src="/media/jeu_nombre.png" alt="Interface d'accueil">
+                            <img src="{% static 'jeu_nombre.png' %}" alt="Interface d'accueil">
                             <div class="screenshot-overlay">
                                 <div class="screenshot-title">Interface d'accueil</div>
                                 <div class="screenshot-desc">Saisie du nombre à deviner</div>
                             </div>
                         </div>
                         <div class="screenshot-item">
-                            <img src="/media/jeu_nombre2.png" alt="Résultat final">
+                            <img src="{% static 'jeu_nombre2.png' %}" alt="Résultat final">
                             <div class="screenshot-overlay">
                                 <div class="screenshot-title">Résultat final</div>
                                 <div class="screenshot-desc">Historique des tentatives</div>
